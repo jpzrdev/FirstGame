@@ -1,0 +1,152 @@
+[gd_scene load_steps=29 format=3 uid="uid://b2hynb03c1a0p"]
+
+[ext_resource type="Texture2D" uid="uid://vu5nrwn1pi1i" path="res://art/characters/enemies/Enemy 1/death_0.png" id="1_2ucms"]
+[ext_resource type="Script" path="res://characters/monsters/purple_devil/purple_devil.gd" id="1_gai4j"]
+[ext_resource type="Texture2D" uid="uid://bb00vbu2cegbn" path="res://art/characters/enemies/Enemy 1/death_1.png" id="2_kamyj"]
+[ext_resource type="Texture2D" uid="uid://eje0wue4pr36" path="res://art/characters/enemies/Enemy 1/death_2.png" id="3_qaqir"]
+[ext_resource type="Texture2D" uid="uid://bqscbternc0ug" path="res://art/characters/enemies/Enemy 1/death_3.png" id="4_0neyy"]
+[ext_resource type="Texture2D" uid="uid://o0sbvbqevgf7" path="res://art/characters/enemies/Enemy 1/death_4.png" id="5_2yyak"]
+[ext_resource type="Texture2D" uid="uid://cq845vbimo8iv" path="res://art/characters/enemies/Enemy 1/death_5.png" id="6_2ar2u"]
+[ext_resource type="Texture2D" uid="uid://bvk8ba5us3v3d" path="res://art/characters/enemies/Enemy 1/death_6.png" id="7_qsmxy"]
+[ext_resource type="Texture2D" uid="uid://diqbb10g441py" path="res://art/characters/enemies/Enemy 1/death_7.png" id="8_loaps"]
+[ext_resource type="Texture2D" uid="uid://4h3bxbmsyo2r" path="res://art/characters/enemies/Enemy 1/death_8.png" id="9_mcdxp"]
+[ext_resource type="Texture2D" uid="uid://bktulh4lb4w31" path="res://art/characters/enemies/Enemy 1/death_9.png" id="10_m1bqd"]
+[ext_resource type="Texture2D" uid="uid://bj0y5xqo8467" path="res://art/characters/enemies/Enemy 1/hit_0.png" id="11_xkd3q"]
+[ext_resource type="Texture2D" uid="uid://cq77nk7w7145h" path="res://art/characters/enemies/Enemy 1/hit_1.png" id="12_wvden"]
+[ext_resource type="Texture2D" uid="uid://csi8rhjjh3xbf" path="res://art/characters/enemies/Enemy 1/hit_2.png" id="13_criwd"]
+[ext_resource type="Texture2D" uid="uid://buba01b5xgvlp" path="res://art/characters/enemies/Enemy 1/walk_0.png" id="14_3rbhs"]
+[ext_resource type="Texture2D" uid="uid://nqiswl1hij81" path="res://art/characters/enemies/Enemy 1/walk_1.png" id="15_8btum"]
+[ext_resource type="Texture2D" uid="uid://dta5wmtf7h416" path="res://art/characters/enemies/Enemy 1/walk_2.png" id="16_wysqo"]
+[ext_resource type="Texture2D" uid="uid://pupv8buix2iv" path="res://art/characters/enemies/Enemy 1/walk_3.png" id="17_x74qb"]
+[ext_resource type="Texture2D" uid="uid://dttmqvga1ckj6" path="res://art/characters/enemies/Enemy 1/walk_4.png" id="18_fydg5"]
+[ext_resource type="Texture2D" uid="uid://jds15gmouesn" path="res://art/characters/enemies/Enemy 1/walk_5.png" id="19_66yw2"]
+[ext_resource type="Texture2D" uid="uid://bm2vhtkeeu160" path="res://art/characters/enemies/Enemy 1/walk_6.png" id="20_rserf"]
+[ext_resource type="Texture2D" uid="uid://cfhvj6tchxhy5" path="res://art/characters/enemies/Enemy 1/walk_7.png" id="21_wmmdx"]
+[ext_resource type="PackedScene" uid="uid://d0s7h3568e7c4" path="res://scenes/HealthComponent.tscn" id="23_uymwy"]
+[ext_resource type="PackedScene" uid="uid://d00ea0xaj7v5m" path="res://scenes/ResistanceWeakanessComponent.tscn" id="23_yu783"]
+[ext_resource type="PackedScene" uid="uid://beih4eaga8od2" path="res://scenes/HurtboxComponent.tscn" id="25_fb01k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ip08c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2ucms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kamyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qaqir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0neyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2yyak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2ar2u")
+}, {
+"duration": 2.1,
+"texture": ExtResource("7_qsmxy")
+}, {
+"duration": 2.1,
+"texture": ExtResource("8_loaps")
+}, {
+"duration": 1.6,
+"texture": ExtResource("9_mcdxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_m1bqd")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_xkd3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wvden")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_criwd")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_3rbhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8btum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wysqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_x74qb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fydg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_66yw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_rserf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wmmdx")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xdg3e"]
+radius = 43.0
+height = 120.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5l78l"]
+radius = 46.0
+height = 132.0
+
+[node name="purple_devil" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+platform_floor_layers = 4294967040
+script = ExtResource("1_gai4j")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -86)
+scale = Vector2(0.197266, 0.197266)
+sprite_frames = SubResource("SpriteFrames_ip08c")
+animation = &"walk"
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -4)
+shape = SubResource("CapsuleShape2D_xdg3e")
+
+[node name="ResistanceWeaknessComponent" parent="." instance=ExtResource("23_yu783")]
+position = Vector2(0, -1)
+
+[node name="HealthComponent" parent="." instance=ExtResource("23_uymwy")]
+max_health = 100
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("healt_component", "resistance_component") instance=ExtResource("25_fb01k")]
+collision_layer = 2
+healt_component = NodePath("../HealthComponent")
+resistance_component = NodePath("../ResistanceWeaknessComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(-2, -2)
+shape = SubResource("CapsuleShape2D_5l78l")
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
+[connection signal="damage_taken" from="HealthComponent" to="." method="_on_health_component_damage_taken"]
+[connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
+[connection signal="health_depleted" from="HealthComponent" to="HurtboxComponent" method="_on_health_component_health_depleted"]

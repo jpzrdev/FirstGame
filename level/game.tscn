@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt7hgklngmp42"]
+
+[ext_resource type="Script" path="res://level/game.gd" id="1_hfrdy"]
+[ext_resource type="PackedScene" uid="uid://qwoni0lvsw2t" path="res://characters/players/player.tscn" id="1_qxkw8"]
+
+[sub_resource type="Curve2D" id="Curve2D_d8bqn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -125, -113, 0, 0, 0, 0, -156, 1209, 0, 0, 0, 0, 1762, 1111, 0, 0, 0, 0, 1725, -97, 0, 0, 0, 0, -125, -113)
+}
+point_count = 5
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_hfrdy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -30
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -3.0
+offset_top = -13.0
+offset_right = 2134.0
+offset_bottom = 1089.0
+color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[node name="player" parent="." instance=ExtResource("1_qxkw8")]
+position = Vector2(1028, 411)
+
+[node name="Path2D" type="Path2D" parent="player"]
+position = Vector2(-780.923, -418.386)
+scale = Vector2(0.936392, 0.863843)
+curve = SubResource("Curve2D_d8bqn")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="player/Path2D"]
+position = Vector2(-125, -113)
+rotation = 1.59424
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0431373, 0.0431373, 0.0431373, 0.682353)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -41.5
+offset_right = 171.5
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER"
+
+[node name="Button" type="Button" parent="GameOver/ColorRect"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = 42.0
+offset_right = 109.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart game"
+
+[connection signal="health_depleted" from="player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="button_down" from="GameOver/ColorRect/Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="GameOver/ColorRect/Button" to="." method="_on_button_pressed"]

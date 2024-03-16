@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://beih4eaga8od2"]
+
+[ext_resource type="Script" path="res://scripts/resources/HurtboxComponent.gd" id="1_r0v4x"]
+[ext_resource type="PackedScene" uid="uid://dx7t1sm8x2p0m" path="res://scenes/FloatingDamageComponent.tscn" id="2_lm3t7"]
+
+[node name="HurtboxComponent" type="Area2D"]
+script = ExtResource("1_r0v4x")
+
+[node name="FloatingDamageComponent" parent="." instance=ExtResource("2_lm3t7")]
